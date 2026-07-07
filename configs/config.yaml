@@ -1,0 +1,20 @@
+paths:
+  input_csv: "data/raw/fleurs_fa_test.csv"
+  rag_db_path: "data/raw/fleurs_fa_rag_database.csv"
+  output_csv: "data/processed/qualitative_comparison.csv"
+
+retrieval:
+  correct_weight: 0.1
+  error_weight: 2.0
+  similarity_threshold: 0.05
+
+llm:
+  api_key: ""
+  model_name: ""
+  base_url: ""
+  temperature: 0.1
+  system_prompt: |
+    شما یک ویراستار تخصصی زبان فارسی هستید. وظیفه شما اصلاح خروجی مدل ASR است.
+    قوانین:
+    - اگر کلمه‌ای با دیتای RAG تطابق داشت، حتماً املای آن را اصلاح کنید.
+    - فقط متن نهایی را چاپ کنید. از خودتان چیزی اضافه نکنید.
